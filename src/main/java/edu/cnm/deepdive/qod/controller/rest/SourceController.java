@@ -42,7 +42,7 @@ public class SourceController {
   }
 
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-  public Iterable<Source> get() {
+  public Iterable<Source> get(@RequestParam boolean includeNull) {
     return repository.findAllByOrderByName();
   }
 
